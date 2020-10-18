@@ -19,7 +19,6 @@ def random_walk(chord_graph, start_chord=None, progression_length=4):
                    for neighboring_chord in list(neighboring_chords)]
         weights = np.array(weights) / sum(weights)
         current_chord = np.random.choice(a=neighboring_chords, p=weights)
-        chord_path.append(current_chord)
         neighboring_chords = list(chord_graph.neighbors(current_chord))
 
     return chord_path
